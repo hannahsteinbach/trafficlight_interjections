@@ -67,8 +67,8 @@ Only interjection prediction:<br>
 
 
 ### Topic Classification Model
-Our topic classification model is a fine-tuned parlBERT based on [chkla/parlbert-topic-german](https://huggingface.co/chkla/parlbert-topic-german) ([their paper](https://aclanthology.org/2022.parlaclarin-1.13/)).
-It was fine-tuned on CAP-annotated quasi-sentences by [Breunig et al., 2023](https://www.tandfonline.com/doi/abs/10.1080/13572334.2021.2010395?casa_token=MTatRdAME5oAAAAA:nUMscjmO9f69wKeFguwpfxlorG5f8QXpLELZQ4hMczVhN8jiuyvTIsOmLhnSJlDXN0RmKDI4aNj2MA) ([dataset](https://www.gpa.uni-konstanz.de/data/)).
+Our topic classification model is a fine-tuned parlBERT based on [chkla/parlbert-topic-german](https://huggingface.co/chkla/parlbert-topic-german) ([Klamm et al., 2022](https://aclanthology.org/2022.parlaclarin-1.13/)). <br>
+It was fine-tuned on CAP-annotated quasi-sentences by [Breunig et al., 2023](https://www.tandfonline.com/doi/abs/10.1080/13572334.2021.2010395?casa_token=MTatRdAME5oAAAAA:nUMscjmO9f69wKeFguwpfxlorG5f8QXpLELZQ4hMczVhN8jiuyvTIsOmLhnSJlDXN0RmKDI4aNj2MA) ([dataset](https://www.gpa.uni-konstanz.de/data/)). <br>
 Our fine-tuned model is available on [HuggingFace](https://huggingface.co/hannahsteinbach/finetuned_parlBERT_phaseIII). <br><br><br>
 
 ### Requirements
