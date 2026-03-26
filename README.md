@@ -4,7 +4,7 @@ This repository contains the code for my Master's thesis analyzing how verbal in
 
 
 ## Preprocessing Parliamentary Protocols
-The script preprocess.py takes XML-structured parliamentary protocols [Bundestag Open Data](https://www.bundestag.de/services/opendata) and generates a structured CSV file extracting the following features:
+The script preprocess.py takes XML-structured parliamentary protocols ([Bundestag Open Data](https://www.bundestag.de/services/opendata)) and generates a structured CSV file extracting the following features:
 
 | Category           | Columns                                                                                                                                                                                                                                     | Description                                                                                                                                                                                                                |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
