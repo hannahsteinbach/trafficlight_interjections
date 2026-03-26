@@ -29,7 +29,7 @@ The structured CSV for the entire 20th legislative period can be found on [Huggi
 ## RQs
 Code used to answer the research questions is in `RQs/`.
 
-The dataframe of all verbal interjections between SPD, FDP, and Greens, annotated with CAP-annotated topic labels and interjection types, is located in `annotations/final_labels_rq2`.  <br> <br> <br>
+The dataframe of all verbal interjections between SPD, FDP, and Greens, annotated with CAP-annotated topic labels and interjection types, is located in `annotations/final_labels_rq2`.  While all interjection types were manually annotated, the `manual_annotation` column indicates whether the topic was manually or automatically labeled. <br> <br> <br>
 
 
 ## How to use interjection and topic model
@@ -80,7 +80,7 @@ For questions, contact the author: **hannahsteinbach0312@gmail.com**. <br> <br><
 
 
 ###  License
-- All files in `data/`  were directly downlaoded from https://www.bundestag.de/services/opendata.
+- All files in `data/`  were directly downloaded from https://www.bundestag.de/services/opendata.
 - The tool for structuring files and the manual annotations are under **CC-BY-NC-4.0**. <br> <br> <br>
 
 
