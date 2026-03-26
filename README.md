@@ -22,7 +22,7 @@ The script preprocess.py takes XML-structured parliamentary protocols [Bundestag
 - *Nonverbal types*: `Beifall` (applause), `Lachen` (laughter), `Heiterkeit` (amusement), `Unruhe` (commotion)
 - Default target (`Directed at`) is the speaker, unless otherwise specified in the protocol.
 
-To generate annotated dataframes for other legislative periods (works for XML files starting from 18th legislative period), update the content in `data/` and run `preprocess.py`.
+To generate annotated dataframes for other legislative periods (works for XML files starting from the 18th legislative period), update the content in `data/` and run `preprocess.py`.
 
 The structured CSV for the entire 20th legislative period can be found on [HuggingFace](https://huggingface.co/datasets/hannahsteinbach/bundestag-20/tree/main)(`all_output_20.csv`). <br> <br> <br>
 
