@@ -1,5 +1,11 @@
+# *You Are Coalition Partners!*—Alignment and Conflict in the Traffic Light Coalition Through Interjections and Policy Topics 🚦 
 
-## Overview of extracted dataframe columns
+This repository contains the code for my Master's thesis analyzing how verbal interjections are used among the three parties of the German Traffic Light Coalition to express alignment and conflict. <br><br>
+
+
+## Preprocessing Parliamentary Protocols
+The script preprocess.py takes XML-structured parliamentary protocols [Bundestag Open Data](https://www.bundestag.de/services/opendata) and generates a structured CSV file extracting the following features:
+
 | Category           | Columns                                                                                                                                                                                                                                     | Description                                                                                                                                                                                                                |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **General Debate** | `Filename` <br> `Period` <br> `Date` <br> `Speech #` <br> `Paragraph #`                                                                                                                                                                     | Identifiers for each speech and paragraph, including the file, legislative period, debate date, speech number, and paragraph ID within that speech.                                                                        |
@@ -10,25 +16,30 @@
 | **Context**        | `Agenda Item` <br> `Context` <br> `Supplementary Context` <br> `Previous Paragraphs` <br> `Previous Interjections`                                                                                                                          | Surrounding context for a paragraph or interjection. Includes agenda item, (supplementary) context, up to two previous paragraphs by the speaker, and prior interjections (with type, text, and party info).                 |
 
 
-**Notes**:
+**Notes**
+- Interjection includes any reaction (verbal or nonverbal), not limited to the type `Zuruf`.
+- *Verbal types*: `Zuruf` (verbal interjection), `Gegenruf` (counter-interjection), `Widerspruch` (objection), `Zustimmung` (agreement)
+- *Nonverbal types*: `Beifall` (applause), `Lachen` (laughter), `Heiterkeit` (amusement), `Unruhe` (commotion)
+- Default target (`Directed at`) is the speaker, unless otherwise specified in the protocol.
 
-In this context, interjection includes any reaction (verbal or nonverbal) and is not limited to the specific type `Zuruf` (verbal interjection).
+To generate annotated dataframes for other legislative periods, update the content in `data/` and run `preprocess.py`.
 
-**Verbal Types**: `Zuruf` (verbal interjection), `Gegenruf` (counter-interjection), `Widerspruch` (objection), `Zustimmung` (agreement)
+The structured CSV for the entire 20th legislative period can be found on [HuggingFace](https://huggingface.co/datasets/hannahsteinbach/bundestag-20/tree/main)(`all_output_20.csv`). <br> <br> <br>
 
-**Nonverbal Types**: `Beifall` (applause), `Lachen` (laughter), `Heiterkeit` (amusement), `Unruhe` (commotion)
+## RQs
+Code used to answer the research questions is in `RQs/`.
 
-Default target (`Directed at`) is the speaker, unless specified otherwise in the protocol. <br> <br> <br>
+The dataframe of all verbal interjections between SPD, FDP, and Greens, annotated with CAP-annotated topic labels and interjection types, is located in `annotations/final_labels_rq2`.  <br> <br> <br>
 
 
 ## How to use interjection and topic model
 
-Run the script with:
+Run the prediction script:
 
 ```python predict.py input_file.csv output_file.csv [flags]```
 <br><br>
 
-#### Flags
+### Flags
 ```--predict_topics```<br>Predict the topic of each paragraph. <br>
 Default behavior: Uses 1 previous paragraph as context (requires column: `Previous Paragraphs`) and includes the agenda block (requires columns: `Agenda Item`, `Context`, `Supplementary Context`).
 
@@ -39,7 +50,7 @@ Predict interjection type
 Disable using previous paragraphs for context.
 
 ```--no_agenda_block```<br>
-Disable including the agenda block in predictions. <br>
+Disable including the agenda block in predictions. <br><br>
 
 #### Examples
 Default interjection + topic prediction (1 previous paragraph + agenda block): <br>
@@ -52,4 +63,25 @@ Only topic prediction: <br>
 ```python predict.py input_file.csv output_file.csv --predict_topics```
 
 Only interjection prediction:<br>
-```python predict.py input_file.csv output_file.csv --predict_interjections```
+```python predict.py input_file.csv output_file.csv --predict_interjections```<br><br><br>
+
+
+### Topic Classification Model
+Our topic classification model is a fine-tuned parlBERT based on [chkla/parlbert-topic-german](https://huggingface.co/chkla/parlbert-topic-german) ([their paper](https://aclanthology.org/2022.parlaclarin-1.13/)).
+Our fine-tuned model is available on [HuggingFace](https://huggingface.co/hannahsteinbach/finetuned_parlBERT_phaseIII). <br><br><br>
+
+### Requirements
+All necessary dependencies are listed in `environment.yml`.  <br> <br><br>
+
+
+### Contact
+For questions, contact the author: **hannahsteinbach0312@gmail.com**. <br> <br><br>
+
+
+###  License
+- All files in `data/`  were directly downlaoded from https://www.bundestag.de/services/opendata.
+- The tool for structuring files and the manual annotations are under **CC-BY-NC-4.0**. <br> <br> <br>
+
+
+**Enjoyyyyy** 🫧
+
