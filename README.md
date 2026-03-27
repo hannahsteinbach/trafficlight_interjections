@@ -36,8 +36,10 @@ The dataframe of all verbal interjections between SPD, FDP, and Greens, annotate
 
 Run the prediction script:
 
-```python predict.py input_file.csv output_file.csv [flags]```
-<br><br>
+```python
+python predict.py input_file.csv output_file.csv [flags]
+```
+<br>
 
 ### Flags
 ```--predict_topics```<br>Predict the topic of each paragraph. <br>
@@ -54,17 +56,25 @@ Disable including the agenda block in predictions. <br><br>
 
 #### Examples
 Default interjection + topic prediction (1 previous paragraph + agenda block): <br>
-```python predict.py input_file.csv output_file.csv --predict_interjections --predict_topics```
+```python
+python predict.py input_file.csv output_file.csv --predict_interjections --predict_topics
+```
 
 Interjection + topic prediction without previous paragraph and agenda block: <br>
-```python predict.py input_file.csv output_file.csv --predict_topics --predict_interjections --no_previous_paragraphs --no_agenda_block```
+```python
+python predict.py input_file.csv output_file.csv --predict_topics --predict_interjections --no_previous_paragraphs --no_agenda_block
+```
 
 Only topic prediction: <br>
-```python predict.py input_file.csv output_file.csv --predict_topics```
+```python
+python predict.py input_file.csv output_file.csv --predict_topics
+```
 
 Only interjection prediction:<br>
-```python predict.py input_file.csv output_file.csv --predict_interjections```<br><br><br>
-
+```python
+python predict.py input_file.csv output_file.csv --predict_interjections
+```
+<br>
 
 ### Topic Classification Model
 Our topic classification model is a fine-tuned parlBERT based on [chkla/parlbert-topic-german](https://huggingface.co/chkla/parlbert-topic-german) ([Klamm et al., 2022](https://aclanthology.org/2022.parlaclarin-1.13/)). <br>
