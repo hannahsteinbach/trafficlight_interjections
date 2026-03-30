@@ -29,7 +29,9 @@ The structured CSV for the entire 20th legislative period can be found on [Huggi
 ## RQs
 Code used to answer the research questions is in `RQs/`.
 
-The dataframe of all verbal interjections between SPD, FDP, and Greens, annotated with CAP-annotated topic labels and interjection types, is located in `annotations/final_labels_rq2`.  While all interjection types were manually annotated, the `manual_annotation` column indicates whether the topic was manually or automatically labeled. <br> <br> <br>
+The dataframe of all verbal interjections between SPD, FDP, and Greens, annotated with CAP-annotated topic labels and interjection types, is located in `annotations/final_labels_rq2`.  While all interjection types were manually annotated, the `manual_annotation` column indicates whether the topic was manually or automatically labeled. 
+
+`RQs/` also contains R files, R was used for a regression analysis and plot generation for RQ1 and RQ2 (interjection score). <br> <br> <br>
 
 
 ## How to use interjection and topic model
