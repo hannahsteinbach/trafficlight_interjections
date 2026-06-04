@@ -229,7 +229,8 @@ if __name__ == "__main__":
         else:
             df[col] = df[col].fillna("")
 
-    df["Interjection Text"] = df["Interjection Text"].fillna("")
+    if args.predict_interjections:
+        df["Interjection Text"] = df["Interjection Text"].fillna("")
     df["Paragraph"] = df["Paragraph"].fillna("")
 
     interjection_model = joblib.load("interjections/interjection_type_svm_pipeline.joblib")
