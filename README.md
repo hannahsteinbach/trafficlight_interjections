@@ -1,6 +1,6 @@
 # *You Are Coalition Partners!*—Alignment and Conflict in the Traffic Light Coalition Through Interjections and Policy Topics 🚦 
 
-This repository contains the code for my Master's thesis analyzing how verbal interjections are used among the three parties of the German Traffic Light Coalition to express alignment and conflict. <br><br>
+This repository contains the code for analyzing how verbal interjections are used among the three parties of the German Traffic Light Coalition to express alignment and conflict. <br><br>
 
 
 ## Preprocessing Parliamentary Protocols
