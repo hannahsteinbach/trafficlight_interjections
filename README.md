@@ -24,7 +24,7 @@ The script preprocess.py takes XML-structured parliamentary protocols ([Bundesta
 
 To generate annotated dataframes for other legislative periods (works for XML files starting from the 18th legislative period), update the content in `data/` and run `preprocess.py`.
 
-The structured CSV for the entire 20th legislative period can be found on [HuggingFace](https://huggingface.co/datasets/hannahsteinbach/bundestag-20). <br> <br> <br>
+The structured CSV for the entire 20th legislative period can be found on [HuggingFace](https://anonymous-hf.up.railway.app/a/r2pisdl7m5dh/). <br> <br> <br>
 
 ## RQs
 Code used to answer the research questions is in `RQs/`.
@@ -85,10 +85,6 @@ Our fine-tuned model is available on [HuggingFace](https://huggingface.co/hannah
 
 ### Requirements
 All necessary dependencies are listed in `environment.yml`.  <br> <br><br>
-
-
-### Contact
-For questions, contact the author: **hannahsteinbach0312@gmail.com**. <br> <br><br>
 
 
 ###  License
