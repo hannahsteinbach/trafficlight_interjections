@@ -23,6 +23,7 @@ The script preprocess.py takes XML-structured parliamentary protocols ([Bundesta
 - Default target (`Directed at`) is the speaker, unless otherwise specified in the protocol.
 
 To generate annotated dataframes for other legislative periods (works for XML files starting from the 18th legislative period), update the content in `data/` and run `preprocess.py`.
+You should also update the Stammdaten with the newest versions (find them here: https://www.bundestag.de/services/opendata) if you use the tool for later legislative periods. 
 
 The structured CSV for the entire 20th legislative period can be found on [HuggingFace](https://anonymous-hf.up.railway.app/a/r2pisdl7m5dh/). <br> <br> <br>
 
