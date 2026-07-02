@@ -95,7 +95,7 @@ python -m spacy download de_core_news_md
 ```python
 python -m spacy download de_core_news_sm
 ```
-<br> <br><br>
+<br> <br>
 
 ###  License
 - All files in `data/`  were directly downloaded from https://www.bundestag.de/services/opendata.
