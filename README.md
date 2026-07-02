@@ -87,6 +87,12 @@ Our fine-tuned model is available on [HuggingFace](https://anonymous-hf.up.railw
 ### Requirements
 All necessary dependencies are listed in `environment.yml`.  <br> <br><br>
 
+After creating the environment, install the German spaCy models:
+
+```bash
+python -m spacy download de_core_news_md
+python -m spacy download de_core_news_sm
+```
 
 ###  License
 - All files in `data/`  were directly downloaded from https://www.bundestag.de/services/opendata.
