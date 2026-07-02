@@ -85,7 +85,7 @@ It was fine-tuned on CAP-annotated quasi-sentences by [Breunig et al., 2023](htt
 Our fine-tuned model is available on [HuggingFace](https://anonymous-hf.up.railway.app/a/a0h9bnz03655/). <br><br><br>
 
 ### Requirements
-All necessary dependencies are listed in `environment.yml`.  <br> <br><br>
+All necessary dependencies are listed in `environment.yml`.  
 
 After creating the environment, install the German spaCy models:
 
@@ -95,6 +95,7 @@ python -m spacy download de_core_news_md
 ```python
 python -m spacy download de_core_news_sm
 ```
+<br> <br><br>
 
 ###  License
 - All files in `data/`  were directly downloaded from https://www.bundestag.de/services/opendata.
