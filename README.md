@@ -89,8 +89,10 @@ All necessary dependencies are listed in `environment.yml`.  <br> <br><br>
 
 After creating the environment, install the German spaCy models:
 
-```bash
+```python
 python -m spacy download de_core_news_md
+```
+```python
 python -m spacy download de_core_news_sm
 ```
 
