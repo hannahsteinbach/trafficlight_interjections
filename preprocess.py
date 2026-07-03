@@ -129,6 +129,13 @@ def handle_sub(element):
     parts = []
 
     for node in element.iter():
+
+        # in protocols from the 18th period, there are sometimes xml tags with <a to indicate Druckseitennummern that we need to remove
+        if node.tag == 'a':
+            if node.tail:
+                parts.append(node.tail)
+            continue
+
         if node.tag == 'sub': #so co2 is not separated
             if node.text:
                 parts.append(node.text)
@@ -366,7 +373,6 @@ for filename in tqdm(os.listdir(data_directory), desc="Processing files", unit="
             main_party = speaker_party
             main_role_long = speaker_role_long
 
-
             # Jetzt sammeln wir alle Absätze, außer den "redner"-Abschnitt
             paragraphs = []
             interjections = []
@@ -517,8 +523,9 @@ for filename in tqdm(os.listdir(data_directory), desc="Processing files", unit="
                 elif element.tag == "kommentar":
                     is_interjection = True
                     interjection_nonverbal_meta = []
+                    interjection_text = "".join(element.itertext()).strip()
 
-                    interjection_text = element.text
+                    # interjection_text = element.text
                     interjection_text = re.sub(r"[()]", "", interjection_text)  # remove brackets around interjections
                      # Split the text at -–—
                     potential_parts = re.split(split_pattern, interjection_text)
@@ -1052,7 +1059,7 @@ for filename in tqdm(os.listdir(data_directory), desc="Processing files", unit="
                                             trailing_text = part[last_end:]
 
                                             if "im ganzen Hause" in trailing_text:
-                                                parties_found = ['all']
+                                                parties_found = None
                                             else:
                                                 # Zuruf der Bundesministerin Annalena Baerbock
                                                 minister_match = re.search(
