@@ -45,12 +45,12 @@ python predict.py input_file.csv output_file.csv [flags]
 <br>
 
 ### Flags
-```--predict_topics```<br>Predict the topic of each paragraph. <br>
+```--predict_topics```<br>
 Default behavior: Predicts the topic of the target paragraph (requires column `Paragraph`). It uses 1 previous paragraph as context (column: `Previous Paragraphs`) and includes the agenda block (columns: `Agenda Item`, `Context`, `Supplementary Context`). These columns are automatically filled if you use our tool to preprocess XML files (`preprocess.py`). 
 If the context columns are empty (`Previous Paragraphs`, `Agenda Item`, `Context`, `Supplementary Context`), the model still runs, and the decision is then based only on the target paragraph (`Paragraph`). This makes it possible to classify the topic even if you do not have these columns in your dataframe, though it likely decreases the model's performance.
 
 ```--predict_interjections```<br>
-Default behavior: Predicts the verbal interjection type(s) (). Requires columns `Interjection Text` (content of the verbal interjections), `Party` (party receiving the interjection), `Interjector Party` (party interjecting), `Paragraph` (speech paragraph preceding the interjection), `Quote` (Boolean denoting whether the speaker receiving the interjection was quoting someone), `Directed at (Party)` (indicating what party the interjection is directed at, can deviate from the speaker party). These columns are automatically filled if you use our tool to preprocess XML files (`preprocess.py`). 
+Default behavior: Predicts the verbal interjection type(s) (*cooperative, confrontational, ambiguous, cooperative\_others, confrontational\_others*). Requires columns `Interjection Text` (content of the verbal interjections), `Party` (party receiving the interjection), `Interjector Party` (party interjecting), `Paragraph` (speech paragraph preceding the interjection), `Quote` (Boolean denoting whether the speaker receiving the interjection was quoting someone), `Directed at (Party)` (indicating what party the interjection is directed at, can deviate from the speaker party). These columns are automatically filled if you use our tool to preprocess XML files (`preprocess.py`). 
 
 ```--no_previous_paragraphs```<br>
 Disable using previous paragraphs for context.
